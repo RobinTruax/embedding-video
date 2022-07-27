@@ -1,0 +1,49 @@
+\documentclass[compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{autumn}
+\usepackage{multimedia} % For the first example
+\usepackage{hyperref} % For the second example
+\usepackage{embed-video} % For the third example
+
+\title{Videos in Beamer}
+\subtitle{Three Options \subtitleline}
+\author{Robin Truax}
+\institute{Stanford University}
+\date{July 14th, 2022}
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{External Video Player}
+\begin{frame}{External Video Player}
+    This only works in Adobe Acrobat Reader (ex. not Chrome).
+    \centering
+    \movie[externalviewer]{\includegraphics[width=\textwidth]{Recaman.png}}{Recaman.mp4}
+\end{frame}
+
+\section{Link to YouTube Video}
+\begin{frame}{Embed YouTube Video}
+    This works anywhere.
+    \begin{figure}
+        \centering
+        \href{https://www.youtube.com/watch?v=NCSb1YVd0ZY}{\includegraphics[width=\textwidth]{Recaman.png}}
+        \caption{Recaman Sequence}
+        \label{fig:recaman-sequence}
+    \end{figure}
+\end{frame}
+
+\section{Embed Video Directly}
+\begin{frame}{Embed Video Directly}
+    This only works in Adobe Acrobat Reader (ex. not Chrome).
+    \embedvideo{\includegraphics[page=1, width=\textwidth]{Recaman.png}}{Recaman.mp4}
+    This solution is given by \href{https://tex.stackexchange.com/questions/516029/media9-is-becoming-obsolete-dec-2020-any-alternatives-for-embedding-video-audio}{this answer (link).}
+\end{frame}
+
+\end{document}
